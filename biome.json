@@ -30,7 +30,8 @@
 				"noUndeclaredVariables": "error"
 			},
 			"style": {
-				"useImportType": "error"
+				"useImportType": "error",
+				"noNonNullAssertion": "off"
 			}
 		}
 	}

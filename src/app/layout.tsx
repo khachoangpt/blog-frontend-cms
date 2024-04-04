@@ -1,6 +1,7 @@
 import '@/app/globals.css'
 
 import { getTheme } from '@/actions'
+import { TooltipProvider } from '@/components/plate-ui/tooltip'
 import { Container } from '@/components/ui/container'
 import { Toaster } from '@/components/ui/sonner'
 import { fontSans } from '@/configs/font'
@@ -28,10 +29,16 @@ export default async function RootLayout({ children }: MainLayoutProps) {
 					fontSans.variable,
 				)}
 			>
-				<Container className="mx-auto my-10 max-w-5xl select-none max-lg:px-4">
-					{children}
-				</Container>
-				<Toaster position="top-center" richColors />
+				<TooltipProvider
+					disableHoverableContent
+					delayDuration={500}
+					skipDelayDuration={0}
+				>
+					<Container className="mx-auto my-10 max-w-5xl select-none max-lg:px-4">
+						{children}
+					</Container>
+					<Toaster position="top-center" richColors />
+				</TooltipProvider>
 			</body>
 		</html>
 	)
