@@ -7,7 +7,7 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
-		"oas:sdk:admin": "pnpm openapi -i ../blog-backend/docs/spec.admin.json -o ./client-sdk/backend -c fetch --useOptions --exportSchemas true --indent 2 --request ./client-sdk/request/index.ts",
+		"oas:sdk:admin": "pnpm openapi -i ../blog-backend/docs/next-spec.admin.json -o ./client-sdk/backend -c fetch --useOptions --exportSchemas true --indent 2 --request ./client-sdk/request/index.ts",
 		"openapi:generate": "pnpm oas:sdk:admin",
 		"prepare": "husky"
 	},

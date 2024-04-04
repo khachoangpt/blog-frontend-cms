@@ -18,13 +18,25 @@ export class BlogService {
    * @throws ApiError
    */
   public static createBlog({
+    cache,
     requestBody,
   }: {
+    /**
+     * Next.js option
+     */
+    cache?: {
+      revalidate?: number;
+      type?: 'default' | 'force-cache' | 'no-cache' | 'no-store' | 'only-if-cached' | 'reload';
+      tags?: Array<string>;
+    },
     requestBody?: CreateBlogParams,
   }): CancelablePromise<CreateBlogResponse> {
     return __request(OpenAPI, {
       method: 'POST',
       url: '/customer/blog',
+      path: {
+        'cache': cache,
+      },
       body: requestBody,
       mediaType: 'application/json',
     });
@@ -36,13 +48,25 @@ export class BlogService {
    * @throws ApiError
    */
   public static updateBlog({
+    cache,
     requestBody,
   }: {
+    /**
+     * Next.js option
+     */
+    cache?: {
+      revalidate?: number;
+      type?: 'default' | 'force-cache' | 'no-cache' | 'no-store' | 'only-if-cached' | 'reload';
+      tags?: Array<string>;
+    },
     requestBody?: UpdateBlogParams,
   }): CancelablePromise<UpdateBlogResponse> {
     return __request(OpenAPI, {
       method: 'PUT',
       url: '/customer/blog',
+      path: {
+        'cache': cache,
+      },
       body: requestBody,
       mediaType: 'application/json',
     });
@@ -55,16 +79,26 @@ export class BlogService {
    */
   public static publishBlog({
     id,
+    cache,
   }: {
     /**
      * Id of blog
      */
     id: string,
+    /**
+     * Next.js option
+     */
+    cache?: {
+      revalidate?: number;
+      type?: 'default' | 'force-cache' | 'no-cache' | 'no-store' | 'only-if-cached' | 'reload';
+      tags?: Array<string>;
+    },
   }): CancelablePromise<PublishBlogResponse> {
     return __request(OpenAPI, {
       method: 'PATCH',
       url: '/customer/blog/{id}',
       path: {
+        'cache': cache,
         'id': id,
       },
     });

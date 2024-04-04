@@ -3,7 +3,7 @@ import { cva } from 'class-variance-authority'
 export const drawerOverlayVariants = cva('fixed inset-0 z-50 bg-black/80')
 
 export const drawerContentVariants = cva(
-	'fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border bg-background',
+	'fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto flex-col rounded-t-[10px] border bg-base',
 )
 
 export const drawerHeaderVariants = cva(

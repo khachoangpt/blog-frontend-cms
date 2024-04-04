@@ -15,13 +15,25 @@ export class TagService {
    * @throws ApiError
    */
   public static createTag({
+    cache,
     requestBody,
   }: {
+    /**
+     * Next.js option
+     */
+    cache?: {
+      revalidate?: number;
+      type?: 'default' | 'force-cache' | 'no-cache' | 'no-store' | 'only-if-cached' | 'reload';
+      tags?: Array<string>;
+    },
     requestBody?: CreateTagParams,
   }): CancelablePromise<CreateTagResponse> {
     return __request(OpenAPI, {
       method: 'POST',
       url: '/customer/tag',
+      path: {
+        'cache': cache,
+      },
       body: requestBody,
       mediaType: 'application/json',
     });

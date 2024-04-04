@@ -15,13 +15,25 @@ export class AuthService {
    * @throws ApiError
    */
   public static login({
+    cache,
     requestBody,
   }: {
+    /**
+     * Next.js option
+     */
+    cache?: {
+      revalidate?: number;
+      type?: 'default' | 'force-cache' | 'no-cache' | 'no-store' | 'only-if-cached' | 'reload';
+      tags?: Array<string>;
+    },
     requestBody?: LoginAdminParams,
   }): CancelablePromise<LoginAdminResponse> {
     return __request(OpenAPI, {
       method: 'POST',
       url: '/admin/auth/login',
+      path: {
+        'cache': cache,
+      },
       body: requestBody,
       mediaType: 'application/json',
     });
