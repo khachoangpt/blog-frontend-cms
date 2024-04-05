@@ -2,11 +2,11 @@
 
 import { CommentsPopover } from '@/components/plate-ui/comments-popover'
 import { Editor } from '@/components/plate-ui/editor'
-import { FixedToolbar } from '@/components/plate-ui/fixed-toolbar'
 import { FixedToolbarButtons } from '@/components/plate-ui/fixed-toolbar-buttons'
 import { FloatingToolbar } from '@/components/plate-ui/floating-toolbar'
 import { FloatingToolbarButtons } from '@/components/plate-ui/floating-toolbar-buttons'
 import { MentionCombobox } from '@/components/plate-ui/mention-combobox'
+import { Toolbar } from '@/components/plate-ui/toolbar'
 import { TooltipProvider } from '@/components/plate-ui/tooltip'
 import { plugins } from '@/plugins/plate'
 import { CommentsProvider } from '@udecode/plate-comments'
@@ -28,10 +28,10 @@ export function PlateEditor() {
 			<DndProvider backend={HTML5Backend}>
 				<CommentsProvider users={{}} myUserId="1">
 					<Plate plugins={plugins} initialValue={initialValue}>
-						<FixedToolbar>
+						<Toolbar className="border-t-2 border-x-2 rounded-tl-md rounded-tr-md">
 							<FixedToolbarButtons />
-						</FixedToolbar>
-						<Editor />
+						</Toolbar>
+						<Editor className="border-2 rounded-none rounded-bl-md rounded-br-md focus-visible:ring-0 focus-visible:ring-offset-0" />
 						<FloatingToolbar>
 							<FloatingToolbarButtons />
 						</FloatingToolbar>

@@ -28,11 +28,10 @@ export function FixedToolbarButtons() {
 			>
 				{!readOnly && (
 					<>
-						<ToolbarGroup noSeparator>
+						<ToolbarGroup>
 							<InsertDropdownMenu />
 							<TurnIntoDropdownMenu />
 						</ToolbarGroup>
-
 						<ToolbarGroup>
 							<MarkToolbarButton tooltip="Bold (⌘+B)" nodeType={MARK_BOLD}>
 								<Icons.bold />
@@ -46,7 +45,6 @@ export function FixedToolbarButtons() {
 							>
 								<Icons.underline />
 							</MarkToolbarButton>
-
 							<MarkToolbarButton
 								tooltip="Strikethrough (⌘+⇧+M)"
 								nodeType={MARK_STRIKETHROUGH}
@@ -59,9 +57,7 @@ export function FixedToolbarButtons() {
 						</ToolbarGroup>
 					</>
 				)}
-
 				<div className="grow" />
-
 				<ToolbarGroup noSeparator>
 					<ModeDropdownMenu />
 				</ToolbarGroup>

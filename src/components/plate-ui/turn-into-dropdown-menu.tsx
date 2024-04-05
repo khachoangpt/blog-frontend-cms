@@ -11,7 +11,12 @@ import {
 	useEditorRef,
 	useEditorSelector,
 } from '@udecode/plate-common'
-import { ELEMENT_H1, ELEMENT_H2, ELEMENT_H3 } from '@udecode/plate-heading'
+import {
+	ELEMENT_H1,
+	ELEMENT_H2,
+	ELEMENT_H3,
+	ELEMENT_H4,
+} from '@udecode/plate-heading'
 import { ELEMENT_PARAGRAPH } from '@udecode/plate-paragraph'
 import React from 'react'
 
@@ -52,6 +57,12 @@ const items = [
 		label: 'Heading 3',
 		description: 'Heading 3',
 		icon: Icons.h3,
+	},
+	{
+		value: ELEMENT_H4,
+		label: 'Heading 4',
+		description: 'Heading 4',
+		icon: Icons.h4,
 	},
 	{
 		value: ELEMENT_BLOCKQUOTE,
